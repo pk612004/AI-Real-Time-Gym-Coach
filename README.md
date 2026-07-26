@@ -25,9 +25,9 @@ https://youtu.be/7Em67EOG6Y0
 ## Project Preview
 
 <p align="center">
+  <img src="LandingPage/assets/images/img7.png" width="31%">
   <img src="LandingPage/assets/images/img1.png" width="31%">
-  <img src="LandingPage/assets/images/img3.png" width="31%">
-  <img src="LandingPage/assets/images/img4.png" width="31%">
+  <img src="LandingPage/assets/images/img8.png" width="31%">
 </p>
 
 ---
