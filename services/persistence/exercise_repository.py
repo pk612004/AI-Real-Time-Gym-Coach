@@ -3,14 +3,22 @@ import streamlit as st
 import tempfile
 from pathlib import Path
 
-# Writable database location for Streamlit Community Cloud
+# Writable database location (Windows/Linux/macOS)
 _DB_PATH = str(Path(tempfile.gettempdir()) / "data.db")
 
 
 @st.cache_resource
 def _get_connection() -> sqlite3.Connection:
-    conn = sqlite3.connect(_DB_PATH, check_same_thread=False)
+    conn = sqlite3.connect(
+        _DB_PATH,
+        check_same_thread=False,
+        timeout=30,
+    )
     conn.row_factory = sqlite3.Row
+
+    # Better concurrent read/write behavior
+    conn.execute("PRAGMA journal_mode=WAL")
+
     return conn
 
 
@@ -27,12 +35,13 @@ def init_db() -> None:
             )
             """
         )
+
         conn.execute(
             """
             CREATE TABLE IF NOT EXISTS exercises (
                 id            INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id       INTEGER NOT NULL REFERENCES users(id),
-                exercise_name TEXT    NOT NULL,
+                exercise_name TEXT NOT NULL,
                 reps          INTEGER NOT NULL DEFAULT 0,
                 sets          INTEGER NOT NULL DEFAULT 0,
                 time          INTEGER NOT NULL DEFAULT 0,
@@ -46,7 +55,8 @@ def get_user(username: str) -> sqlite3.Row:
     conn = _get_connection()
 
     return conn.execute(
-        "SELECT * FROM users WHERE username = ?", (username,)
+        "SELECT * FROM users WHERE username = ?",
+        (username,),
     ).fetchone()
 
 
@@ -55,7 +65,8 @@ def create_user(username: str) -> sqlite3.Row:
 
     with conn:
         conn.execute(
-            "INSERT INTO users (username) VALUES (?)", (username,)
+            "INSERT INTO users (username) VALUES (?)",
+            (username,),
         )
 
     return get_user(username)
@@ -99,7 +110,11 @@ def add_exercise(user_id, exercise_name, reps, sets, time):
 def get_users_exercises(user_id):
     conn = _get_connection()
 
-    return conn.execute("""
-        SELECT * FROM exercises 
+    return conn.execute(
+        """
+        SELECT *
+        FROM exercises
         WHERE user_id = ?
-    """, (user_id,)).fetchall()
+        """,
+        (user_id,),
+    ).fetchall()
