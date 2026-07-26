@@ -1,4 +1,4 @@
-# 🏋️ AI Real-Time Gym Coach
+# AI Real-Time Gym Coach
 
 An AI-powered personal fitness trainer that uses computer vision and real-time pose estimation to analyze workout form, count repetitions, and provide instant AI voice coaching.
 
@@ -6,69 +6,53 @@ The goal of this project is to make home workouts smarter by giving users live f
 
 ---
 
-##  Project Preview
+## Live Demo
 
+### Landing Page
 
+https://ai-real-time-gym-coach.vercel.app/
+
+### Application
+
+https://ai-real-time-gym-coach.onrender.com/
+
+### Demo Video
+
+https://youtu.be/7Em67EOG6Y0
+
+---
+
+## Project Preview
 
 <p align="center">
-<img src="LandingPage/assets/images/img1.png" width="900">
+  <img src="LandingPage/assets/images/img1.png" width="31%">
+  <img src="LandingPage/assets/images/img3.png" width="31%">
+  <img src="LandingPage/assets/images/img4.png" width="31%">
 </p>
 
 ---
 
+## Features
 
-
-<p align="center">
-<img src="LandingPage/assets/images/img2.png" width="900">
-</p>
-
----
-
-
-
-<p align="center">
-<img src="LandingPage/assets/images/img3.png" width="900">
-</p>
-
----
-
-
-
-<p align="center">
-<img src="LandingPage/assets/images/img4.png" width="900">
-</p>
+- Real-time pose detection using MediaPipe
+- Supports 5+ exercises
+  - Squats
+  - Push-ups
+  - Biceps Curls
+  - Shoulder Press
+  - Lunges
+- Automatic repetition counting
+- Live workout dashboard
+- Exercise-specific posture and form correction
+- AI-generated coaching feedback using Groq
+- Natural voice responses using ElevenLabs
+- Simple user login system
+- Workout history tracking with SQLite
+- Responsive landing page
 
 ---
 
-
-
-<p align="center">
-<img src="LandingPage/assets/images/img5.png" width="900">
-</p>
-
----
-
-##  Features
-
--  Real-time pose detection using MediaPipe
--  Supports multiple exercises
--  Squats
--  Push-ups
--  Biceps Curls
--  Shoulder Press
--  Lunges
--  Automatic repetition counting
--  Live workout dashboard
--  Exercise-specific posture and form correction
--  AI-generated coaching feedback using Groq
--  Natural voice responses using ElevenLabs
--  Simple user login system
--  Workout history tracking with SQLite
--  Modern responsive landing page
-
----
-
-##  Performance
+## Performance
 
 | Metric | Result |
 |---------|---------|
@@ -77,11 +61,11 @@ The goal of this project is to make home workouts smarter by giving users live f
 | AI Voice Response | **0.91 s** |
 | Supported Exercises | **5+** |
 
-> These performance metrics were measured during testing on the development environment. Actual performance may vary depending on hardware and deployment platform.
+> Performance values were measured during testing on the local development environment.
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -113,9 +97,9 @@ The goal of this project is to make home workouts smarter by giving users live f
 
 ---
 
-##  Project Structure
+## Project Structure
 
-```
+```text
 AI-Real-Time-Gym-Coach
 │
 ├── LandingPage/
@@ -139,7 +123,7 @@ AI-Real-Time-Gym-Coach
 
 ---
 
-##  How It Works
+## How It Works
 
 1. Login using your name.
 2. Select an exercise.
@@ -148,11 +132,11 @@ AI-Real-Time-Gym-Coach
 5. The webcam detects body landmarks in real time.
 6. Exercise-specific algorithms analyze posture and movement.
 7. AI provides instant coaching feedback.
-8. Workout statistics are automatically recorded and stored.
+8. Workout statistics are automatically stored in SQLite.
 
 ---
 
-##  Supported Exercises
+## Supported Exercises
 
 - Squats
 - Push-ups
@@ -162,63 +146,45 @@ AI-Real-Time-Gym-Coach
 
 ---
 
-##  Live Demo
-
-### Landing Page
-
-https://ai-real-time-gym-coach.vercel.app/
-
-### Application
-
-https://ai-real-time-gym-coach.onrender.com/
-
-### Demo Video
-
-A complete walkthrough of the project is available in the repository and can also be viewed here:
-
-*https://youtu.be/7Em67EOG6Y0*
-
----
-
-##  Future Improvements
+## Future Improvements
 
 - Personalized workout plans
-- More exercise detection
+- Additional exercise support
 - User authentication
-- Cloud database
-- Progress analytics dashboard
+- Cloud database integration
+- Progress analytics
 - Workout reports
 - Mobile application
-- Wearable device integration
+- Wearable integration
 
 ---
 
-##  Deployment Note
+## Deployment Note
 
-The application runs completely in the local development environment.
+The application works fully in the local development environment.
 
-The public deployment is hosted on Render's free tier. Since the real-time workout module relies on WebRTC, camera connectivity may occasionally be affected by free hosting limitations and browser/network configurations.
+The live demo is hosted on Render's free tier. Since the workout module relies on WebRTC for real-time camera streaming, connectivity may occasionally be affected by browser settings, network configuration, or free hosting limitations.
 
-The complete functionality of the application can be seen in the included demo video.
+The complete functionality of the project is demonstrated in the linked demo video.
 
 ---
 
-##  Author
+## Author
 
 **Prakash Kumar**
 
-B.Tech — Electronics & Communication Engineering
+B.Tech – Electronics & Communication Engineering
 
 Thapar Institute of Engineering and Technology
 
-### GitHub
+**GitHub**
 
 https://github.com/pk612004
 
-### LinkedIn
+**LinkedIn**
 
 https://www.linkedin.com/in/prakash612004/
 
 ---
 
-If you found this project interesting, consider giving the repository a ⭐.
+If you found this project useful or interesting, consider starring the repository.
