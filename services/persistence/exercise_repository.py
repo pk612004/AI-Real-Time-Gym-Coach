@@ -1,9 +1,10 @@
-
 import sqlite3
 import streamlit as st
+import tempfile
 from pathlib import Path
 
-_DB_PATH = str(Path(__file__).parent.parent.parent / "data.db")
+# Writable database location for Streamlit Community Cloud
+_DB_PATH = str(Path(tempfile.gettempdir()) / "data.db")
 
 
 @st.cache_resource
