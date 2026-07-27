@@ -18,7 +18,7 @@ https://ai-real-time-gym-coach.onrender.com/
 
 ### Demo Video
 
-https://youtu.be/7Em67EOG6Y0
+https://youtu.be/XaIoTgbo02A
 
 ---
 
